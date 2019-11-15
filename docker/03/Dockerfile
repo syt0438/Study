@@ -1,0 +1,10 @@
+FROM ubuntu:18.04
+MAINTAINER linshu <745698872@qq.com>
+
+ENV ENTRY_EXECUTABLE_FILE entrypoint.sh
+
+COPY /$ENTRY_EXECUTABLE_FILE /data/$ENTRY_EXECUTABLE_FILE
+
+RUN cat -n /data/$ENTRY_EXECUTABLE_FILE
+
+CMD ["/bin/bash"]

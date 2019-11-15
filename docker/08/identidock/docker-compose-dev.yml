@@ -1,0 +1,17 @@
+version: '3'
+services:
+    identidock:
+        build: .
+        ports:
+            - '5000:5000'
+        environment:
+            ENV: DEV
+        volumes:
+            - ./app:/app
+        links:
+            - dnmonster:dnmonster
+
+    dnmonster:
+        image: amouat/dnmonster:1.0
+        ports:
+            - '8080:8080'

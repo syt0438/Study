@@ -1,0 +1,158 @@
+#!/bin/bash
+
+shellDir=$SHELL_HOME
+indexFile=$STUDY_HOME/cdemoindex
+index=1
+# 0 default: new file
+# 1 re-edit last file
+reedit=0
+
+# 0 default: Re-edit last shell file
+# 1 only create shell file
+# 2 only open vim to edit shell file
+# 3 open vim to edit and execute shell file
+
+mode=$1
+
+if [[ $mode = [0123] ]]; then
+    if [[ $mode = [0] ]]; then
+        reedit=1
+    fi
+
+    shift
+else
+    mode=0
+    reedit=1
+fi
+
+echo "$(date '+%F %T.%3N') INFO: Handle Start ##################################################"
+
+echo "$(date '+%F %T.%3N') INFO: Pre check up Start -------------------------------------------------"
+
+if [ $reedit -eq 0 ] && [ ! -e $indexFile ]; then
+    echo "$(date '+%F %T.%3N') INFO: Try create index file $indexFile with index no $index."
+    
+    echo "$index" > $indexFile && echo "$(date '+%F %T.%3N') INFO: Create index file $indexFile successed."
+
+    if [ ! -e $indexFile ]; then
+        echo "$(date '+%F %T.%3N') ERROR: Index file $indexFile create failed!"
+
+        exit 1
+    fi
+
+    chmod 644 $indexFile
+fi
+
+if [ ! -f $indexFile ]; then
+    echo "$(date '+%F %T.%3N') ERROR: Index file $indexFile is not a text file!"
+
+    exit 1
+fi
+
+if [ ! -r $indexFile ]; then
+    echo "$(date '+%F %T.%3N') ERROR: Index file $indexFile cannot read!"
+
+    exit 1
+fi
+
+index=`head -n 1 $indexFile`
+
+if [ $reedit -eq 1 ]; then
+    index=$[ $index - 1 ]
+fi
+
+if [ $index -lt 10 ]; then
+    index=`printf "%02d" $index`
+fi
+
+echo "$(date '+%F %T.%3N') INFO: Pre check up end ---------------------------------------------------"
+
+if [ $reedit -eq 0 ]; then
+    echo "$(date '+%F %T.%3N') INFO: Try create demo$index shell file."
+else
+    echo "$(date '+%F %T.%3N') INFO: Try re-edit last demo$index shell file."
+fi
+
+demoFileName="demo_$index.sh"
+demoFile="$shellDir/$demoFileName"
+
+if [ $reedit -eq 0 ] && [ -e $demoFile ]; then
+    mv -f $demoFile "$demoFile.bak"
+fi
+
+if [ $reedit -eq 0 ]; then
+    touch $demoFile && echo "$(date '+%F %T.%3N') INFO: Create $demoFileName shell file successed."
+fi
+
+if [ ! -e $demoFile ]; then
+    if [ $reedit -eq 0 ]; then
+        echo "$(date '+%F %T.%3N') $(date '+%F %T.%3N') ERROR: Create $demoFileName shell file failed!"
+    else
+        echo "$(date '+%F %T.%3N') $(date '+%F %T.%3N') ERROR: Re-edit failed, $demoFileName does not exist!"
+    fi
+
+    exit 1
+fi
+
+if [ $reedit -eq 0 ]; then
+    nextIndex=$[ $index + 1 ]
+    echo "$nextIndex" > $indexFile
+fi
+
+chmod 700 $demoFile
+
+if [ $reedit -eq 0 ]; then
+    echo "#!/bin/bash" >> $demoFile
+    echo "" >> $demoFile
+    echo "" >> $demoFile
+fi
+
+case $mode in
+    0)
+        echo
+        vim $demoFile
+        echo "$(date '+%F %T.%3N') INFO: Vim edit $demoFileName completion."
+        echo
+        sleep 1
+        echo "$(date '+%F %T.%3N') INFO: Execute $demoFileName Start --------------------------------------------------" 
+        echo
+
+        $demoFile $*
+
+        echo
+        echo "$(date '+%F %T.%3N') INFO: Execute $demoFileName End   --------------------------------------------------"
+
+        echo;;
+    1)
+        echo
+        echo "$(date '+%F %T.%3N') INFO: $demoFileName Content: "
+        echo
+        echo "`cat $demoFile`"
+        echo;;
+    2)
+        echo
+        vim $demoFile
+        echo "$(date '+%F %T.%3N') INFO: Vim edit $demoFileName completion."
+        echo;;
+    3)
+        echo
+        vim $demoFile
+        echo "$(date '+%F %T.%3N') INFO: Vim edit $demoFileName completion."
+        echo
+        sleep 3
+        echo "$(date '+%F %T.%3N') INFO: Execute $demoFileName Start --------------------------------------------------" 
+        echo
+
+        $demoFile $*
+
+        echo
+        echo "$(date '+%F %T.%3N') INFO: Execute $demoFileName End   --------------------------------------------------"
+        echo;;
+    *)
+        echo;;
+esac
+
+echo "$(date '+%F %T.%3N') INFO: Handle END   ##################################################"
+
+
+

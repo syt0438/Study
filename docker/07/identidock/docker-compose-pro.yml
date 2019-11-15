@@ -1,0 +1,11 @@
+version: '3'
+services:
+    identidock:
+        build: .
+        ports:
+            - '9090:9090'
+            - '9191:9191'
+        environment:
+            ENV: PRO
+        volumes:
+            - ./app:/app
