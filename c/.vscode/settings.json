@@ -3,6 +3,8 @@
         "stdio.h": "c",
         "stdlib.h": "c",
         "unistd.h": "c",
-        "bitsperlong.h": "c"
+        "bitsperlong.h": "c",
+        "limits.h": "c",
+        "float.h": "c"
     }
 }
