@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": ["-a", "-e", "fuck", "ok", "-b", "shit", "-v"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
