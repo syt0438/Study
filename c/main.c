@@ -1,18 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <limits.h>
-#include <float.h>
 
-float total = 0.0;
-short count = 0;
-/* 6% ，比我的经纪人拿的少多了……  */
-short tax_percent = 6;
+typedef struct
+{
+    const char *name;
+    const char *species;
+    int age;
+} turtle;
+
+void happy_birthday(turtle *t)
+{
+    // (*t).age = (*t).age + 1;
+    t->age = t->age + 1;
+
+    // printf("Happy Birthday %s! You are now %i years old!\n", (*t).name, (*t).age);
+    printf("Happy Birthday %s! You are now %i years old!\n", t->name, t->age);
+}
 
 int main()
 {
-    printf("Number of items: %hi\n", 1L);
+    turtle myrtle = {"Myrtle", "Leatherback sea turtle", 99};
 
+    happy_birthday(&myrtle);
+
+    printf("%s's age is now %i\n", myrtle.name, myrtle.age);
 
     return 0;
 }
