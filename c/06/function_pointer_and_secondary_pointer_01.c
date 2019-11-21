@@ -3,6 +3,7 @@
 #include <string.h>
 
 // 函数指针类型由返回值类型和形参列表决定
+// 函数指针类型变量声明格式 👉 返回类型 (*指针变量名)(参数列表)
 void find(int argc, char **argv, int (*predicateFn)(char *))
 {
     puts("Search results:");
