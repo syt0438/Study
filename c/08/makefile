@@ -8,4 +8,4 @@ libsecurity.a: encrypt.o checksum.o
 main: main.c libsecurity.a
 	gcc -I . main.c -L . -l security -o main
 clean: 
-	rm -rf *.o *.a
+	rm -rf *.o *.a main
