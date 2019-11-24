@@ -6,6 +6,8 @@
         "bitsperlong.h": "c",
         "limits.h": "c",
         "float.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "encrypt.h": "c",
+        "checksum.h": "c"
     }
 }
