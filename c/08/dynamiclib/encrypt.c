@@ -1,4 +1,4 @@
-#include "encrypt.h"
+#include <encrypt.h>
 
 void encrypt(char *message)
 {
