@@ -8,6 +8,8 @@
         "float.h": "c",
         "string.h": "c",
         "encrypt.h": "c",
-        "checksum.h": "c"
+        "checksum.h": "c",
+        "error.h": "c",
+        "errno.h": "c"
     }
 }
