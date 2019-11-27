@@ -12,12 +12,14 @@ int main(int argc, char *argv[])
     {
         sprintf(filepath, "%02d", i);
 
-        /*
+         /*
          * fork 系统调用复制当前进程
          * 如果当前进程为父进程，fork 调用返回子进程 PID
          * 如果当前进程为子进程，fork 调用返回 0
+         * 
+         * 不同操作系统用不同的整数类型保存进程 ID，有的用short，有的用int，操作系统使用哪种类型，pid_t就设为哪个。
          * */
-        __pid_t pid = fork();
+        pid_t pid = fork();
 
         // 如果当前进程为子进程，则执行 exec 函数，子进程被替换为 exec 进程继续执行
         if (pid == 0)
