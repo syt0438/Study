@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    printf("[%d]: %s", argc, argv[argc - 1]);
+    
 
     return EXIT_SUCCESS;
 }
