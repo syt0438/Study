@@ -4,15 +4,20 @@
 #include <errno.h>
 #include <unistd.h>
 
+void error(char *msg)
+{
+    fprintf(stderr, "%s: %s", strerror(errno), msg);
+
+    exit(EXIT_FAILURE);
+}
+
 int main(int argc, char *argv[])
 {
     FILE *out = fopen("out", "w");
 
     if (!out)
     {
-        printf("Open file failed: %s\n", strerror(errno));
-
-        return EXIT_FAILURE;
+        error("Out file open failed");
     }
 
     // 将标准输出 stdout 所对应的描述符重定向到 out 描述符所指向的数据流
