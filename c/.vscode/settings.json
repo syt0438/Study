@@ -10,6 +10,7 @@
         "encrypt.h": "c",
         "checksum.h": "c",
         "error.h": "c",
-        "errno.h": "c"
+        "errno.h": "c",
+        "wait.h": "c"
     }
 }
