@@ -11,6 +11,9 @@
         "checksum.h": "c",
         "error.h": "c",
         "errno.h": "c",
-        "wait.h": "c"
+        "wait.h": "c",
+        "signum.h": "c",
+        "sigaction.h": "c",
+        "signal.h": "c"
     }
 }

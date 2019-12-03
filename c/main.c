@@ -3,11 +3,11 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <signal.h>
 
 void error(char *msg)
 {
-    fprintf(stderr, "%s: %s", strerror(errno), msg);
+    fprintf(stderr, "%s: %s\n", strerror(errno), msg);
 
     exit(EXIT_FAILURE);
 }

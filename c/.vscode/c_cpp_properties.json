@@ -3,12 +3,16 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/**",
+                "/usr/local/include/**",
+                "/opt/rh/devtoolset-7/root/usr/include/**",
+                "/usr/include/**"
             ],
             "defines": [],
             "compilerPath": "/opt/rh/devtoolset-7/root/usr/bin/gcc",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4
