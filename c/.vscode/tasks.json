@@ -7,8 +7,8 @@
             "args": [
                 "-g",
                 "${file}",
-                "${fileDirname}/11/*util.h",
-                "${fileDirname}/11/*util.c",
+                "${fileDirname}/*util.h",
+                "${fileDirname}/*util.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

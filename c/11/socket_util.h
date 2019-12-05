@@ -3,7 +3,11 @@
 
 int open_server_socket();
 
+int open_client_socket();
+
 void bind_to_port(int fd, int port);
+
+void connect_to_server(int fd, char *ip, int port);
 
 int say(int fd, char *msg);
 

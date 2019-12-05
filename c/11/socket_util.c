@@ -13,6 +13,18 @@ int open_server_socket()
     return fd;
 }
 
+int open_client_socket()
+{
+    int fd = socket(PF_INET, SOCK_STREAM, 0);
+
+    if (fd == -1)
+    {
+        error("Can't open socket.");
+    }
+
+    return fd;
+}
+
 void bind_to_port(int fd, int port)
 {
     int reuse = 1;
@@ -30,6 +42,20 @@ void bind_to_port(int fd, int port)
     if (bind(fd, (struct sockaddr *)&name, sizeof(name)) == -1)
     {
         error("Can't bind port to socket");
+    }
+}
+
+void connect_to_server(int fd, char *ip, int port)
+{
+    struct sockaddr_in si;
+    memset(&si, 0, sizeof(struct sockaddr_in));
+    si.sin_family = PF_INET;
+    si.sin_addr.s_addr = inet_addr(ip);
+    si.sin_port = htons(port);
+
+    if (connect(fd, (struct sockaddr *)&si, sizeof(struct sockaddr_in)) == -1)
+    {
+        error("Can't connect to server");
     }
 }
 
@@ -72,5 +98,5 @@ int read_in(int fd, char *buf, int len)
         s[c - 1] = '\0';
     }
 
-    return len - slen;
+    return s == buf ? c : len - slen;
 }

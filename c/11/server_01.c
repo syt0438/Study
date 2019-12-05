@@ -6,9 +6,9 @@
 #include <signal.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
-#include "11/socket_util.h"
-#include "11/signal_util.h"
-#include "11/error_util.h"
+#include "socket_util.h"
+#include "signal_util.h"
+#include "error_util.h"
 
 int server_d = -1;
 
