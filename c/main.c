@@ -6,23 +6,9 @@
 #include <signal.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
-
-void error(char *msg)
-{
-    fprintf(stderr, "%s: %s\n", strerror(errno), msg);
-
-    exit(EXIT_FAILURE);
-}
-
-int registe_sigaction(int seg, void (*handler)(int))
-{
-    struct sigaction action = {0};
-    action.sa_handler = handler;
-    sigemptyset(&action.sa_mask);
-    action.sa_flags = 0;
-
-    return sigaction(seg, &action, NULL);
-}
+#include "11/socket_util.h"
+#include "11/signal_util.h"
+#include "11/error_util.h"
 
 int server_d = -1;
 
@@ -40,50 +26,26 @@ void server_close(int seg)
 
 int main(int argc, char *argv[])
 {
-    if (registe_sigaction(SIGINT, server_close) == -1)
-    {
-        error("registe SIGINT signal handler failed.");
-    }
-
-    if (registe_sigaction(SIGTERM, server_close) == -1)
-    {
-        error("registe SIGTERM signal handler failed.");
-    }
+    registe_sigaction(SIGINT, server_close);
+    registe_sigaction(SIGTERM, server_close);
 
     //#region Create a socket descriptor
-    server_d = socket(PF_INET, SOCK_STREAM, 0);
-
-    if (server_d == -1)
-    {
-        error("Can not open socket");
-    }
-
-    int reuse = 1;
-    if (setsockopt(server_d, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(int)) == -1)
-    {
-        error("set socket option failed");
-    }
+    server_d = open_server_socket();
 
     //#endregion
 
     //#region Create a socket name that represents port 30000
-    struct sockaddr_in name;
-    name.sin_family = PF_INET;
-    name.sin_port = (in_port_t)htons(30000);
-    name.sin_addr.s_addr = htonl(INADDR_ANY);
-
-    if (bind(server_d, (struct sockaddr *)&name, sizeof(name)) == -1)
-    {
-        error("Can not bind port: 30000");
-    }
+    bind_to_port(server_d, 30000);
     //#endregion
 
     //#region listen 30000 port
-    if (listen(server_d, 2) == -1)
+    if (listen(server_d, 10) == -1)
     {
         error("Can not listen socket port 30000");
     }
     //#endregion
+
+    char buf[255] = {0};
 
     for (;;)
     {
@@ -95,16 +57,37 @@ int main(int argc, char *argv[])
 
         if (client_d == -1)
         {
-            error("client connet to server port 30000 failed");
+            fprintf(stderr, "client connet to server port 30000 failed");
+
+            continue;
         }
 
         puts("Accepted client connect.");
 
-        char *banner = "Welcome to Knock-Knock Server\n";
-
-        if (send(client_d, banner, strlen(banner), 0) == -1)
+        if (say(client_d, "Welcome to Knock-Knock Server\n") != -1)
         {
-            error("Send banner failed.");
+            read_in(client_d, buf, sizeof(buf));
+
+            if (!strncmp("Who's there?", buf, 12))
+            {
+                if (say(client_d, "Oscar\n>") != -1)
+                {
+                    read_in(client_d, buf, sizeof(buf));
+
+                    if (!strncmp("Oscar who?", buf, 10))
+                    {
+                        say(client_d, "Oscar silly question, you get a silly answer\n");
+                    }
+                    else
+                    {
+                        say(client_d, "You should say 'Oscar who?' !\n");
+                    }
+                }
+            }
+            else
+            {
+                say(client_d, "You should say 'Who's there?' !\n");
+            }
         }
 
         puts("Close client connect.");

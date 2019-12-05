@@ -9,13 +9,15 @@
         "string.h": "c",
         "encrypt.h": "c",
         "checksum.h": "c",
-        "error.h": "c",
         "errno.h": "c",
         "wait.h": "c",
         "signum.h": "c",
         "sigaction.h": "c",
         "signal.h": "c",
         "errno-base.h": "c",
-        "inet.h": "c"
+        "inet.h": "c",
+        "signal_util.h": "c",
+        "socket_util.h": "c",
+        "error_util.h": "c"
     }
 }
