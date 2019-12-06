@@ -7,8 +7,8 @@
             "args": [
                 "-g",
                 "${file}",
-                "${fileDirname}/*util.h",
-                "${fileDirname}/*util.c",
+                "-l",
+                "pthread",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
