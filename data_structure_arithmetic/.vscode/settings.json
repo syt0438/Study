@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "binary_search.h": "c",
+        "stdlib.h": "c",
+        "binary_search_test.h": "c"
+    }
+}
