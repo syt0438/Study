@@ -1,4 +1,4 @@
-#include "binary_search.h"
+#include "arithmetic.h"
 #include <stdio.h>
 
 size_t binary_search(void *data, size_t len, size_t ele_size, void *item, size_t (*compare)(void *, void *))
@@ -30,7 +30,7 @@ size_t binary_search(void *data, size_t len, size_t ele_size, void *item, size_t
             continue;
         }
 
-        printf("\nfind: %d step\n", count);
+        printf("find: %d step\n", count);
 
         return mid_point;
     }

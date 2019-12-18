@@ -3,6 +3,26 @@
         "cstdlib": "cpp",
         "binary_search.h": "c",
         "stdlib.h": "c",
-        "binary_search_test.h": "c"
+        "binary_search_test.h": "c",
+        "bubble_sort_test.h": "c",
+        "arithmetic.h": "c",
+        "bubble_sort.h": "c",
+        "*.tcc": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "optional": "c",
+        "fstream": "c",
+        "istream": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "streambuf": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "array": "c",
+        "deque": "c",
+        "memory": "c",
+        "string_view": "c",
+        "utils.h": "c"
     }
 }

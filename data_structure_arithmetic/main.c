@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "test/arithmetic/binary_search_test.h"
+#include "test/arithmetic/arithmetic.h"
 
 int main()
 {
-    test();
+    bubble_sort_test();
+    binary_search_test();
 
     return EXIT_SUCCESS;
 }
