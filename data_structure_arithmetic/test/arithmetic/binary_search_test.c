@@ -22,14 +22,13 @@ size_t compare(void *a, void *b)
 
 void test()
 {
-    int data[50];
+    int data[100];
     int len = sizeof(data) / sizeof(data[0]);
-    int target = 88;
+    int target = 2;
 
-    for (size_t i = 1; i <= 50; i++)
+    for (size_t i = 1; i <= 100; i++)
     {
-        data[i - 1] = i * 2;
-        printf(" %d", i * 2);
+        data[i - 1] = i;
     }
 
     size_t result = binary_search(data, len, sizeof(int), &target, compare);
