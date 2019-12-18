@@ -22,11 +22,11 @@ size_t compare(void *a, void *b)
 
 void test()
 {
-    int data[100];
+    int data[2];
     int len = sizeof(data) / sizeof(data[0]);
     int target = 2;
 
-    for (size_t i = 1; i <= 100; i++)
+    for (size_t i = 1; i <= 2; i++)
     {
         data[i - 1] = i;
     }
