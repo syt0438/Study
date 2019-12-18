@@ -1,5 +1,4 @@
 #include "arithmetic.h"
-#include <stdio.h>
 
 static int compare(void *a, void *b)
 {
@@ -14,14 +13,14 @@ static int compare(void *a, void *b)
     return 0;
 }
 
-void bubble_sort_test()
+void selection_sort_test()
 {
-    puts("\nBubble Sort Start\n");
+    puts("\nSelection Sort Start\n");
 
     int data[] = {65, 55, 45, 10, 25, 15, 35};
     int len = sizeof(data) / sizeof(data[0]);
 
-    bubble_sort(data, len, sizeof(int), compare);
+    selection_sort(data, len, sizeof(int), compare);
 
     printf("Sorted data: \n");
 
@@ -31,5 +30,5 @@ void bubble_sort_test()
     }
 
     puts("");
-    puts("\nBubble Sort End\n");
+    puts("\nSelection Sort End\n");
 }

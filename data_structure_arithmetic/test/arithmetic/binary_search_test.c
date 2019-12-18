@@ -1,7 +1,7 @@
 #include "arithmetic.h"
 #include <stdio.h>
 
-static size_t compare(void *a, void *b)
+static int compare(void *a, void *b)
 {
     int _a = *(int *)a;
     int _b = *(int *)b;
