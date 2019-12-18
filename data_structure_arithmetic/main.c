@@ -5,7 +5,6 @@
 int main()
 {
     bubble_sort_test();
-    binary_search_test();
 
     return EXIT_SUCCESS;
 }

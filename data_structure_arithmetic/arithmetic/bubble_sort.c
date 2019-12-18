@@ -20,7 +20,7 @@ void bubble_sort(void *data, size_t len, size_t ele_size, size_t (*compare)(void
             void *a = ((char *)data) + (i * ele_size);
             void *b = ((char *)data) + ((i + 1) * ele_size);
 
-            if (compare(a, b) > 0)
+            if (compare(a, b))
             {
                 sorted = 0;
 
