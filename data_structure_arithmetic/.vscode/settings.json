@@ -23,6 +23,7 @@
         "deque": "c",
         "memory": "c",
         "string_view": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "stdio.h": "c"
     }
 }

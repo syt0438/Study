@@ -1,0 +1,22 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc build active file",
+            "command": "/opt/rh/devtoolset-7/root/usr/bin/gcc",
+            "args": [
+                "-g",
+                "${fileDirname}/main.c",
+                "${fileDirname}/arithmetic/*.c",
+                "${fileDirname}/test/arithmetic/*.c",
+                "${fileDirname}/utils/*.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/opt/rh/devtoolset-7/root/usr/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
