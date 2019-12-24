@@ -1,8 +1,12 @@
 #include "arithmetic.h"
 #include "../utils/utils.h"
 
+static int count = 0;
+
 int partition(void *data, int left_idx, int right_idx, size_t ele_size, int (*compare)(void *, void *))
 {
+    printf("Partition count: %d\n", ++count);
+
     if (left_idx >= right_idx)
     {
         return left_idx;

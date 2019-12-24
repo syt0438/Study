@@ -1,7 +1,7 @@
 #include "arithmetic.h"
 #include <stdio.h>
 
-size_t binary_search(void *data, size_t len, size_t ele_size, void *item, int (*compare)(void *, void *))
+int binary_search(void *data, size_t len, size_t ele_size, void *item, int (*compare)(void *, void *))
 {
     size_t lowerbound = 0;
     size_t upperbound = len - 1;

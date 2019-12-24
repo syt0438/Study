@@ -33,7 +33,7 @@ void binary_search_test()
     }
 
 
-    size_t result = binary_search(data, len, sizeof(int), &target, compare);
+    int result = binary_search(data, len, sizeof(int), &target, compare);
 
     printf("\nBinary Search: result is %d\n", result);
 

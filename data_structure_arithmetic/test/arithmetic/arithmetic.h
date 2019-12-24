@@ -11,3 +11,5 @@ void insertion_sort_test();
 void quick_sort_partition_test();
 
 void quick_sort_test();
+
+void quick_select_test();
