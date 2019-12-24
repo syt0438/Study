@@ -48,8 +48,9 @@ void quick_sort_test()
     puts("\nQuick Sort Start\n");
 
     // int data[] = {65, 55, 45, 10, 25, 15, 35};
+    int data[] = {0, 5, 2, 1, 6, 3};
     // int data[] = {3, 1, 3};
-    int data[] = {25, 15, 10};
+    // int data[] = {25, 15, 10};
     // int data[] = {15, 10};
     // int data[] = {10};
     int len = sizeof(data) / sizeof(data[0]);
