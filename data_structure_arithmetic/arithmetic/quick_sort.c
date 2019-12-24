@@ -9,36 +9,33 @@ int partition(void *data, int left_idx, int right_idx, size_t ele_size, int (*co
     }
 
     int pivot_idx = right_idx--;
-
-    void *left = ((char *)data) + (left_idx * ele_size);
-    void *right = ((char *)data) + (right_idx * ele_size);
+    void *left, *right;
     void *pivot = ((char *)data) + (pivot_idx * ele_size);
 
     for (;;)
     {
         for (;;)
         {
+            left = ((char *)data) + (left_idx * ele_size);
+
             if (compare(left, pivot) >= 0)
             {
                 break;
             }
 
-            left = ((char *)data) + (++left_idx * ele_size);
+            left_idx++;
         }
 
         for (;;)
         {
-            if (compare(right, pivot) <= 0)
+            right = ((char *)data) + (right_idx * ele_size);
+
+            if (compare(right, pivot) <= 0 || right_idx <= 0)
             {
                 break;
             }
 
-            if (right_idx == 0)
-            {
-                break;
-            }
-
-            right = ((char *)data) + (--right_idx * ele_size);
+            right_idx--;
         }
 
         if (left_idx >= right_idx)
@@ -49,7 +46,7 @@ int partition(void *data, int left_idx, int right_idx, size_t ele_size, int (*co
         swap(left, right, ele_size);
     }
 
-    if (left_idx != pivot_idx)
+    if (left_idx < pivot_idx)
     {
         swap(left, pivot, ele_size);
     }

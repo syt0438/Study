@@ -19,16 +19,17 @@ static int compare(void *a, void *b)
     return 0;
 }
 
+static int data[] = {65, 55, 45, 10, 25, 15, 35};
+// static int data[] = {0, 5, 2, 1, 6, 3};
+// static int data[] = {3, 1, 3};
+// static int data[] = {25, 15, 10};
+// static int data[] = {15, 10};
+// static int data[] = {10};
+static int len = sizeof(data) / sizeof(data[0]);
+
 void quick_sort_partition_test()
 {
     puts("\nQuick Sort Partition Start\n");
-
-    int data[] = {65, 55, 45, 10, 25, 15, 35};
-    // int data[] = {3, 1, 3};
-    // int data[] = {10, 15, 25};
-    // int data[] = {15, 10};
-    // int data[] = {10};
-    int len = sizeof(data) / sizeof(data[0]);
 
     partition(data, 0, len - 1, sizeof(int), compare);
 
@@ -46,14 +47,6 @@ void quick_sort_partition_test()
 void quick_sort_test()
 {
     puts("\nQuick Sort Start\n");
-
-    // int data[] = {65, 55, 45, 10, 25, 15, 35};
-    int data[] = {0, 5, 2, 1, 6, 3};
-    // int data[] = {3, 1, 3};
-    // int data[] = {25, 15, 10};
-    // int data[] = {15, 10};
-    // int data[] = {10};
-    int len = sizeof(data) / sizeof(data[0]);
 
     quick_sort(data, 0, len - 1, sizeof(int), compare);
 
