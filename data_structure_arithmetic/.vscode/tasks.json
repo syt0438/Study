@@ -8,6 +8,7 @@
                 "-g",
                 "${fileDirname}/main.c",
                 "${fileDirname}/arithmetic/*.c",
+                "${fileDirname}/data_structure/*.c",
                 "${fileDirname}/test/arithmetic/*.c",
                 "${fileDirname}/utils/*.c",
                 "-o",
