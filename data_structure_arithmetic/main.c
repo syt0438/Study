@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "test/arithmetic/arithmetic.h"
+#include "test/data_structure/data_structure.h"
 
 int main()
 {
@@ -9,7 +10,9 @@ int main()
     // insertion_sort_test();
     // quick_sort_partition_test();
     // quick_sort_test();
-    quick_select_test();
+    // quick_select_test();
+
+    treeset_test();
 
     return EXIT_SUCCESS;
 }

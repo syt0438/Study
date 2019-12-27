@@ -24,6 +24,10 @@
         "memory": "c",
         "string_view": "c",
         "utils.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "tree_set.h": "c",
+        "string.h": "c",
+        "treeset.h": "c",
+        "data_structure.h": "c"
     }
 }

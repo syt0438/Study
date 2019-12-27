@@ -10,6 +10,7 @@
                 "${fileDirname}/arithmetic/*.c",
                 "${fileDirname}/data_structure/*.c",
                 "${fileDirname}/test/arithmetic/*.c",
+                "${fileDirname}/test/data_structure/*.c",
                 "${fileDirname}/utils/*.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
