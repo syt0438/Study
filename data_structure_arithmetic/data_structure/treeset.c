@@ -105,7 +105,7 @@ static TreeNode *treeset_find_subsequent_node(TreeNode *node)
     }
 }
 
-static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, void *data, void (*destroyer)(void *))
+static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, void *data)
 {
     if (node == NULL)
     {
@@ -116,11 +116,11 @@ static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, v
 
     if (result > 0)
     {
-        return treeset_remove0(treeSet, node, node->left, data, destroyer);
+        return treeset_remove0(treeSet, node, node->left, data);
     }
     else if (result < 0)
     {
-        return treeset_remove0(treeSet, node, node->right, data, destroyer);
+        return treeset_remove0(treeSet, node, node->right, data);
     }
     else
     {
@@ -143,7 +143,7 @@ static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, v
                 }
             }
 
-            destroyer(node->data);
+            treeSet->destroyer(node->data);
             free(node);
 
             return 1;
@@ -185,7 +185,7 @@ static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, v
                 }
             }
 
-            destroyer(node->data);
+            treeSet->destroyer(node->data);
             free(node);
 
             return 1;
@@ -224,7 +224,7 @@ static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, v
             }
         }
 
-        destroyer(node->data);
+        treeSet->destroyer(node->data);
         free(node);
 
         return 1;
@@ -250,9 +250,9 @@ void treeset_add(TreeSet *treeSet, void *data)
     treeset_insert(treeSet->root, newNode, treeSet->comparator);
 }
 
-void treeset_remove(TreeSet *treeSet, void *data, void (*destroyer)(void *))
+void treeset_remove(TreeSet *treeSet, void *data)
 {
-    int result = treeset_remove0(treeSet, NULL, treeSet->root, data, destroyer);
+    int result = treeset_remove0(treeSet, NULL, treeSet->root, data);
 
     if (result)
     {
@@ -272,9 +272,9 @@ void treeset_foreach(TreeSet *treeSet, void (*consumer)(void *))
     treeset_foreach0(treeSet->root, consumer);
 }
 
-void treeset_clean(TreeSet *treeSet, void (*destroyer)(void *))
+void treeset_clean(TreeSet *treeSet)
 {
-    treeset_clean0(treeSet->root, destroyer);
+    treeset_clean0(treeSet->root, treeSet->destroyer);
 
     treeSet->root = NULL;
     treeSet->size = 0;

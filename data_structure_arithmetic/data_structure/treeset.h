@@ -16,14 +16,15 @@ typedef struct
     TreeNode *root;
     int size;
     int (*comparator)(void *, void *);
+    void (*destroyer)(void *);
 } TreeSet;
 
 void treeset_add(TreeSet *treeSet, void *data);
 
-void treeset_remove(TreeSet *treeSet, void *data, void (*destroyer)(void *));
+void treeset_remove(TreeSet *treeSet, void *data);
 
 int treeset_contains(TreeSet *treeSet, void *data);
 
 void treeset_foreach(TreeSet *treeSet, void (*consumer)(void *));
 
-void treeset_clean(TreeSet *treeSet, void (*destroyer)(void *));
+void treeset_clean(TreeSet *treeSet);

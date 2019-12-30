@@ -25,7 +25,7 @@ static void destoryer(void *_data)
 
 void treeset_test()
 {
-    TreeSet set = {.comparator = comparator};
+    TreeSet set = {.comparator = comparator, .destroyer = destoryer};
 
     //#region init data
     treeset_add(&set, (void *)50);
@@ -43,15 +43,15 @@ void treeset_test()
     treeset_add(&set, (void *)95);
     //#endregion
 
-    treeset_remove(&set, (void *)11, destoryer);
-    treeset_remove(&set, (void *)56, destoryer);
-    treeset_remove(&set, (void *)50, destoryer);
+    treeset_remove(&set, (void *)11);
+    treeset_remove(&set, (void *)56);
+    treeset_remove(&set, (void *)50);
 
     printf("\n\nClean before node count: %d\n\n", set.size);
 
     treeset_foreach(&set, consumer);
 
-    treeset_clean(&set, destoryer);
+    treeset_clean(&set);
 
     printf("\n\nClean after node count: %d\n\n", set.size);
 
