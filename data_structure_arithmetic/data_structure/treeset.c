@@ -194,40 +194,49 @@ static int treeset_remove0(TreeSet *treeSet, TreeNode *parent, TreeNode *node, v
         //#endregion
 
         //#region 删除算法规则三：如果要删除的结点有两个子结点，则将该结点替换成其后继结点
-
-        TreeNode *subsequent_node = treeset_find_subsequent_node(node->right);
-
-        //#region 删除算法规则四：如果后继结点带有右子结点，则在后继结点填补被删除结点以后，用此右子结点替代后继结点的父节点的左子结点
-
-        if (subsequent_node->right != NULL)
+        if (node->left != NULL && node->right != NULL)
         {
+            TreeNode *subsequent_node = treeset_find_subsequent_node(node->right);
             TreeNode *subsequent_node_parent = treeset_find_subsequent_node_parent(node->right);
+            subsequent_node_parent->left = NULL;
 
-            subsequent_node_parent->left = subsequent_node->right;
-        }
+            //#region 删除算法规则四：如果后继结点带有右子结点，则在后继结点填补被删除结点以后，用此右子结点替代后继结点的父节点的左子结点
 
-        //#endregion
-
-        if (parent == NULL)
-        {
-            treeSet->root = subsequent_node;
-        }
-        else
-        {
-            if (parent->left == node)
+            if (subsequent_node->right != NULL)
             {
-                parent->left = subsequent_node;
+                subsequent_node_parent->left = subsequent_node->right;
             }
-            else if (parent->right == node)
+
+            //#endregion
+
+            subsequent_node->left = node->left;
+
+            if (node->right != subsequent_node)
             {
-                parent->right = subsequent_node;
+                subsequent_node->right = node->right;
             }
+
+            if (parent == NULL)
+            {
+                treeSet->root = subsequent_node;
+            }
+            else
+            {
+                if (parent->left == node)
+                {
+                    parent->left = subsequent_node;
+                }
+                else if (parent->right == node)
+                {
+                    parent->right = subsequent_node;
+                }
+            }
+
+            treeSet->destroyer(node->data);
+            free(node);
+
+            return 1;
         }
-
-        treeSet->destroyer(node->data);
-        free(node);
-
-        return 1;
         //#endregion
     }
 }
