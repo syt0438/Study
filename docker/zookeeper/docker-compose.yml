@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+    zookeeper_2181:
+        container_name: zookeeper_2181
+        image: zookeeper:3.5.7
+        hostname: zookeeper_2181
+        ports:
+            - 2181:2181
+            - 8080:8080
+        environment:
+            ZOO_MY_ID: 1
+            ZOO_SERVERS: server.1=zookeeper_2181:2888:3888;2181 server.10=zookeeper_2182:2888:3888;2181 server.100=zookeeper_2183:2888:3888;2181
+    zookeeper_2182:
+        container_name: zookeeper_2182
+        image: zookeeper:3.5.7
+        hostname: zookeeper_2182
+        ports:
+            - 2182:2181
+            - 8081:8080
+        environment:
+            ZOO_MY_ID: 10
+            ZOO_SERVERS: server.1=zookeeper_2181:2888:3888;2181 server.10=zookeeper_2182:2888:3888;2181 server.100=zookeeper_2183:2888:3888;2181
+    zookeeper_2183:
+        container_name: zookeeper_2183
+        image: zookeeper:3.5.7
+        hostname: zookeeper_2183
+        ports:
+            - 2183:2181
+            - 8082:8080
+        environment:
+            ZOO_MY_ID: 100
+            ZOO_SERVERS: server.1=zookeeper_2181:2888:3888;2181 server.10=zookeeper_2182:2888:3888;2181 server.100=zookeeper_2183:2888:3888;2181

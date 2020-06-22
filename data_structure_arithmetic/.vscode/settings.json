@@ -28,6 +28,8 @@
         "tree_set.h": "c",
         "string.h": "c",
         "treeset.h": "c",
-        "data_structure.h": "c"
+        "data_structure.h": "c",
+        "unistd.h": "c",
+        "syscall.h": "c"
     }
 }

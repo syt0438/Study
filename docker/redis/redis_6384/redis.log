@@ -1,0 +1,309 @@
+1:C 13 Mar 2020 13:31:23.757 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 13 Mar 2020 13:31:23.757 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 13 Mar 2020 13:31:23.757 # Configuration loaded
+1:M 13 Mar 2020 13:31:23.758 * No cluster configuration found, I'm f16a0f69702d233768cec8075f6bdb8d7677c7fc
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 5.0.7 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in cluster mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6384
+ |    `-._   `._    /     _.-'    |     PID: 1
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+1:M 13 Mar 2020 13:31:23.772 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1:M 13 Mar 2020 13:31:23.772 # Server initialized
+1:M 13 Mar 2020 13:31:23.772 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 13 Mar 2020 13:31:23.772 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 13 Mar 2020 13:31:23.772 * Ready to accept connections
+1:M 13 Mar 2020 13:35:23.941 # configEpoch set to 6 via CLUSTER SET-CONFIG-EPOCH
+1:M 13 Mar 2020 13:35:24.275 # IP address for this node updated to 172.18.0.7
+1:M 13 Mar 2020 13:35:29.249 # Cluster state changed: ok
+1:S 13 Mar 2020 13:35:29.964 * Before turning into a replica, using my master parameters to synthesize a cached master: I may be able to synchronize with the new master with just a partial transfer.
+1:S 13 Mar 2020 13:35:30.553 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 13:35:30.553 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 13:35:30.554 * Non blocking connect for SYNC fired the event.
+1:S 13 Mar 2020 13:35:30.555 * Master replied to PING, replication can continue...
+1:S 13 Mar 2020 13:35:30.556 * Trying a partial resynchronization (request 5033efd6def534f6eab714d2d9f2dd0f96148c37:1).
+1:S 13 Mar 2020 13:35:30.559 * Full resync from master: c67467da2bc7612358717cbb3ee9c34cd4f74af6:0
+1:S 13 Mar 2020 13:35:30.559 * Discarding previously cached master state.
+1:S 13 Mar 2020 13:35:30.595 * MASTER <-> REPLICA sync: receiving 175 bytes from master
+1:S 13 Mar 2020 13:35:30.595 * MASTER <-> REPLICA sync: Flushing old data
+1:S 13 Mar 2020 13:35:30.595 * MASTER <-> REPLICA sync: Loading DB in memory
+1:S 13 Mar 2020 13:35:30.596 * MASTER <-> REPLICA sync: Finished with success
+1:S 13 Mar 2020 13:35:30.597 * Background append only file rewriting started by pid 15
+1:S 13 Mar 2020 13:35:30.626 * AOF rewrite child asks to stop sending diffs.
+15:C 13 Mar 2020 13:35:30.626 * Parent agreed to stop sending diffs. Finalizing AOF...
+15:C 13 Mar 2020 13:35:30.626 * Concatenating 0.00 MB of AOF diff received from parent.
+15:C 13 Mar 2020 13:35:30.627 * SYNC append only file rewrite performed
+15:C 13 Mar 2020 13:35:30.627 * AOF rewrite: 6 MB of memory used by copy-on-write
+1:S 13 Mar 2020 13:35:30.655 * Background AOF rewrite terminated with success
+1:S 13 Mar 2020 13:35:30.655 * Residual parent diff successfully flushed to the rewritten AOF (0.00 MB)
+1:S 13 Mar 2020 13:35:30.656 * Background AOF rewrite finished successfully
+1:S 13 Mar 2020 14:02:25.677 # Connection with master lost.
+1:S 13 Mar 2020 14:02:25.677 * Caching the disconnected master state.
+1:S 13 Mar 2020 14:02:26.403 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:26.403 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:26.403 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:27.407 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:27.407 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:27.407 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:28.411 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:28.411 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:28.412 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:29.415 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:29.415 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:29.416 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:30.419 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:30.419 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:30.420 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:31.424 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:31.424 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:31.425 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:31.814 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about c2373db38bcbc51190f9b1c3e65aebd52f6300bd
+1:S 13 Mar 2020 14:02:31.814 # Cluster state changed: fail
+1:S 13 Mar 2020 14:02:31.825 # Start of election delayed for 904 milliseconds (rank #0, offset 2464).
+1:S 13 Mar 2020 14:02:32.425 * Connecting to MASTER 211.159.216.48:6379
+1:S 13 Mar 2020 14:02:32.425 * MASTER <-> REPLICA sync started
+1:S 13 Mar 2020 14:02:32.426 # Error condition on socket for SYNC: Connection refused
+1:S 13 Mar 2020 14:02:32.826 # Starting a failover election for epoch 8.
+1:S 13 Mar 2020 14:02:32.840 # Failover election won: I'm the new master.
+1:S 13 Mar 2020 14:02:32.841 # configEpoch set to 8 after successful failover
+1:M 13 Mar 2020 14:02:32.841 # Setting secondary replication ID to c67467da2bc7612358717cbb3ee9c34cd4f74af6, valid up to offset: 2465. New replication ID is 571ede5185b35cbb15a10c1704851d7ab9feef11
+1:M 13 Mar 2020 14:02:32.841 * Discarding previously cached master state.
+1:M 13 Mar 2020 14:02:32.841 # Cluster state changed: ok
+1:M 13 Mar 2020 14:04:10.241 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: master without slots is reachable again.
+1:M 13 Mar 2020 14:04:11.231 * Replica 211.159.216.48:6379 asks for synchronization
+1:M 13 Mar 2020 14:04:11.231 * Partial resynchronization not accepted: Replication ID mismatch (Replica asked for '9999b6bf04c536a3514ea5d1bdb0375ecae8beaa', my replication IDs are '571ede5185b35cbb15a10c1704851d7ab9feef11' and 'c67467da2bc7612358717cbb3ee9c34cd4f74af6')
+1:M 13 Mar 2020 14:04:11.231 * Starting BGSAVE for SYNC with target: disk
+1:M 13 Mar 2020 14:04:11.232 * Background saving started by pid 16
+16:C 13 Mar 2020 14:04:11.241 * DB saved on disk
+16:C 13 Mar 2020 14:04:11.241 * RDB: 6 MB of memory used by copy-on-write
+1:M 13 Mar 2020 14:04:11.262 * Background saving terminated with success
+1:M 13 Mar 2020 14:04:11.262 * Synchronization with replica 211.159.216.48:6379 succeeded
+1:signal-handler (1584500404) Received SIGTERM scheduling shutdown...
+1:M 18 Mar 2020 03:00:04.133 # Connection with replica 211.159.216.48:6379 lost.
+1:M 18 Mar 2020 03:00:04.142 # User requested shutdown...
+1:M 18 Mar 2020 03:00:04.142 * Calling fsync() on the AOF file.
+1:M 18 Mar 2020 03:00:04.143 * Removing the pid file.
+1:M 18 Mar 2020 03:00:04.148 # Redis is now ready to exit, bye bye...
+1:C 18 Mar 2020 03:07:50.521 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 18 Mar 2020 03:07:50.521 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 18 Mar 2020 03:07:50.521 # Configuration loaded
+1:M 18 Mar 2020 03:07:50.523 * Node configuration loaded, I'm f16a0f69702d233768cec8075f6bdb8d7677c7fc
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 5.0.7 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in cluster mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6384
+ |    `-._   `._    /     _.-'    |     PID: 1
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+1:M 18 Mar 2020 03:07:50.523 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+1:M 18 Mar 2020 03:07:50.523 # Server initialized
+1:M 18 Mar 2020 03:07:50.523 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 18 Mar 2020 03:07:50.523 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+1:M 18 Mar 2020 03:07:50.524 * Reading RDB preamble from AOF file...
+1:M 18 Mar 2020 03:07:50.524 * Reading the remaining AOF tail...
+1:M 18 Mar 2020 03:07:50.524 * DB loaded from append only file: 0.000 seconds
+1:M 18 Mar 2020 03:07:50.524 * Ready to accept connections
+1:M 18 Mar 2020 03:07:50.807 * Replica 211.159.216.48:6379 asks for synchronization
+1:M 18 Mar 2020 03:07:50.807 * Partial resynchronization not accepted: Replication ID mismatch (Replica asked for 'f228352699d923328713d3dbe708d292cc65ea47', my replication IDs are 'f0b6a7983a6686e17b61f3dfa2a0f6a3aaf1c026' and '0000000000000000000000000000000000000000')
+1:M 18 Mar 2020 03:07:50.807 * Starting BGSAVE for SYNC with target: disk
+1:M 18 Mar 2020 03:07:50.808 * Background saving started by pid 15
+15:C 18 Mar 2020 03:07:50.818 * DB saved on disk
+15:C 18 Mar 2020 03:07:50.818 * RDB: 0 MB of memory used by copy-on-write
+1:M 18 Mar 2020 03:07:50.832 * Background saving terminated with success
+1:M 18 Mar 2020 03:07:50.833 * Synchronization with replica 211.159.216.48:6379 succeeded
+1:M 18 Mar 2020 03:07:52.542 # Cluster state changed: ok
+1:M 18 Mar 2020 03:41:28.599 # Cluster state changed: fail
+1:M 18 Mar 2020 03:41:29.412 * Marking node c2373db38bcbc51190f9b1c3e65aebd52f6300bd as failing (quorum reached).
+1:M 18 Mar 2020 03:41:29.476 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: replica is reachable again.
+1:M 18 Mar 2020 03:41:30.115 * FAIL message received from 07358e9560cb6059495fbaf2bf6b831695920b6e about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:M 18 Mar 2020 03:41:30.484 * Marking node 53cbf4b5efdef7e11e54519a22ce0237989e80b5 as failing (quorum reached).
+1:M 18 Mar 2020 03:41:30.775 # Failover auth denied to c2373db38bcbc51190f9b1c3e65aebd52f6300bd: its master is up
+1:M 18 Mar 2020 03:41:33.397 # Connection with replica 211.159.216.48:6379 lost.
+1:M 18 Mar 2020 03:41:33.492 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:M 18 Mar 2020 03:41:33.891 # Configuration change detected. Reconfiguring myself as a replica of c2373db38bcbc51190f9b1c3e65aebd52f6300bd
+1:S 18 Mar 2020 03:41:33.891 * Before turning into a replica, using my master parameters to synthesize a cached master: I may be able to synchronize with the new master with just a partial transfer.
+1:S 18 Mar 2020 03:41:33.891 # Cluster state changed: ok
+1:S 18 Mar 2020 03:41:34.322 * Connecting to MASTER 211.159.216.48:6379
+1:S 18 Mar 2020 03:41:34.322 * MASTER <-> REPLICA sync started
+1:S 18 Mar 2020 03:41:34.323 * Non blocking connect for SYNC fired the event.
+1:S 18 Mar 2020 03:41:34.337 * Master replied to PING, replication can continue...
+1:S 18 Mar 2020 03:41:34.366 * Trying a partial resynchronization (request 9aad2566a298520736f2a8cde5f2e0b7c1334657:2815).
+1:S 18 Mar 2020 03:41:34.376 * Successful partial resynchronization with master.
+1:S 18 Mar 2020 03:41:34.376 # Master replication ID changed to 38e8c796b3c1f838d766c5f075d2b36adf268ac5
+1:S 18 Mar 2020 03:41:34.376 * MASTER <-> REPLICA sync: Master accepted a Partial Resynchronization.
+1:S 18 Mar 2020 03:41:35.181 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: replica is reachable again.
+1:S 18 Mar 2020 04:04:25.183 # Cluster state changed: fail
+1:S 18 Mar 2020 04:04:29.326 * Marking node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f as failing (quorum reached).
+1:S 18 Mar 2020 04:04:29.530 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 18 Mar 2020 04:04:33.103 # Cluster state changed: ok
+1:S 18 Mar 2020 04:04:34.500 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: master without slots is reachable again.
+1:S 18 Mar 2020 04:04:35.602 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:04:35.866 * FAIL message received from c2373db38bcbc51190f9b1c3e65aebd52f6300bd about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 18 Mar 2020 04:04:42.341 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 18 Mar 2020 04:33:42.137 # Cluster state changed: fail
+1:S 18 Mar 2020 04:33:46.405 * FAIL message received from c2373db38bcbc51190f9b1c3e65aebd52f6300bd about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 18 Mar 2020 04:33:47.009 * FAIL message received from c2373db38bcbc51190f9b1c3e65aebd52f6300bd about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 18 Mar 2020 04:33:47.350 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about c2373db38bcbc51190f9b1c3e65aebd52f6300bd
+1:S 18 Mar 2020 04:33:47.352 # Start of election delayed for 578 milliseconds (rank #0, offset 7196).
+1:S 18 Mar 2020 04:33:47.952 # Starting a failover election for epoch 12.
+1:S 18 Mar 2020 04:33:48.397 * Marking node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f as failing (quorum reached).
+1:S 18 Mar 2020 04:33:49.145 * FAIL message received from c2373db38bcbc51190f9b1c3e65aebd52f6300bd about 53cbf4b5efdef7e11e54519a22ce0237989e80b5
+1:S 18 Mar 2020 04:33:50.758 * Marking node eb97b4baffba703c1a0b106c8c26c8aeb122c114 as failing (quorum reached).
+1:S 18 Mar 2020 04:33:57.377 # Currently unable to failover: Waiting for votes, but majority still not reached.
+1:S 18 Mar 2020 04:33:57.546 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 18 Mar 2020 04:33:57.979 # Currently unable to failover: Failover attempt expired.
+1:S 18 Mar 2020 04:33:58.829 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 18 Mar 2020 04:33:59.448 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:34:01.513 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 18 Mar 2020 04:34:02.113 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:34:03.361 * Clear FAIL state for node eb97b4baffba703c1a0b106c8c26c8aeb122c114: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:34:03.361 # Cluster state changed: ok
+1:S 18 Mar 2020 04:34:03.627 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 53cbf4b5efdef7e11e54519a22ce0237989e80b5
+1:S 18 Mar 2020 04:34:03.627 # Cluster state changed: fail
+1:S 18 Mar 2020 04:34:08.363 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:34:09.202 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 18 Mar 2020 04:34:15.323 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:34:15.323 # Cluster state changed: ok
+1:S 18 Mar 2020 04:34:16.066 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 18 Mar 2020 04:34:23.125 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:34:25.333 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 18 Mar 2020 04:34:26.748 # Cluster state changed: fail
+1:S 18 Mar 2020 04:34:28.525 # Cluster state changed: ok
+1:S 18 Mar 2020 04:34:29.755 # Cluster state changed: fail
+1:S 18 Mar 2020 04:34:33.044 * Marking node eb97b4baffba703c1a0b106c8c26c8aeb122c114 as failing (quorum reached).
+1:S 18 Mar 2020 04:34:34.654 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 18 Mar 2020 04:34:35.490 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 18 Mar 2020 04:34:35.742 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about c2373db38bcbc51190f9b1c3e65aebd52f6300bd
+1:S 18 Mar 2020 04:34:35.776 # Start of election delayed for 745 milliseconds (rank #0, offset 7252).
+1:S 18 Mar 2020 04:34:35.777 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 18 Mar 2020 04:34:36.578 # Starting a failover election for epoch 16.
+1:S 18 Mar 2020 04:34:40.253 * Marking node 53cbf4b5efdef7e11e54519a22ce0237989e80b5 as failing (quorum reached).
+1:S 18 Mar 2020 04:34:41.553 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:34:46.605 # Currently unable to failover: Failover attempt expired.
+1:S 18 Mar 2020 04:34:47.465 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 18 Mar 2020 04:34:56.534 # Start of election delayed for 560 milliseconds (rank #0, offset 7294).
+1:S 18 Mar 2020 04:34:56.634 # Currently unable to failover: Waiting the delay before I can start a new failover.
+1:S 18 Mar 2020 04:34:57.137 # Starting a failover election for epoch 17.
+1:S 18 Mar 2020 04:34:57.238 # Currently unable to failover: Waiting for votes, but majority still not reached.
+1:S 18 Mar 2020 04:35:07.178 # Currently unable to failover: Failover attempt expired.
+1:S 18 Mar 2020 04:35:10.358 * Marking node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b as failing (quorum reached).
+1:S 18 Mar 2020 04:35:11.337 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 18 Mar 2020 04:35:17.113 # Start of election delayed for 910 milliseconds (rank #0, offset 7322).
+1:S 18 Mar 2020 04:35:17.213 # Currently unable to failover: Waiting the delay before I can start a new failover.
+1:S 18 Mar 2020 04:35:17.645 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:18.115 # Starting a failover election for epoch 18.
+1:S 18 Mar 2020 04:35:18.216 # Currently unable to failover: Waiting for votes, but majority still not reached.
+1:S 18 Mar 2020 04:35:22.390 * Marking node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b as failing (quorum reached).
+1:S 18 Mar 2020 04:35:22.613 * Marking node 89136814ea739a99417054dbf41ea0ded4817909 as failing (quorum reached).
+1:S 18 Mar 2020 04:35:23.527 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:35:23.760 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 18 Mar 2020 04:35:24.610 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:27.161 * Marking node 53cbf4b5efdef7e11e54519a22ce0237989e80b5 as failing (quorum reached).
+1:S 18 Mar 2020 04:35:29.925 * Clear FAIL state for node eb97b4baffba703c1a0b106c8c26c8aeb122c114: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:33.517 * FAIL message received from c2373db38bcbc51190f9b1c3e65aebd52f6300bd about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 18 Mar 2020 04:35:33.950 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:35:34.158 * Clear FAIL state for node 89136814ea739a99417054dbf41ea0ded4817909: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:35.579 * Marking node c2373db38bcbc51190f9b1c3e65aebd52f6300bd as failing (quorum reached).
+1:S 18 Mar 2020 04:35:37.456 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:38.057 # Start of election delayed for 549 milliseconds (rank #0, offset 7350).
+1:S 18 Mar 2020 04:35:38.659 # Starting a failover election for epoch 20.
+1:S 18 Mar 2020 04:35:40.909 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:44.370 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 18 Mar 2020 04:35:44.693 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 18 Mar 2020 04:35:45.917 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: is reachable again and nobody is serving its slots after some time.
+1:S 18 Mar 2020 04:35:47.314 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 18 Mar 2020 04:35:47.597 # Cluster state changed: ok
+1:S 18 Mar 2020 04:35:50.581 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 20 Mar 2020 10:16:13.639 # Cluster state changed: fail
+1:S 20 Mar 2020 10:16:14.042 # Cluster state changed: ok
+1:S 31 Mar 2020 11:07:45.280 # Bad message length or signature received from Cluster bus.
+1:S 05 Apr 2020 18:33:03.177 # Bad message length or signature received from Cluster bus.
+1:S 05 Apr 2020 18:46:19.016 # Bad message length or signature received from Cluster bus.
+1:S 06 Apr 2020 13:53:20.984 # Bad message length or signature received from Cluster bus.
+1:S 06 Apr 2020 14:03:21.426 # Bad message length or signature received from Cluster bus.
+1:S 08 Apr 2020 01:23:08.881 # Bad message length or signature received from Cluster bus.
+1:S 08 Apr 2020 05:34:10.538 # Cluster state changed: fail
+1:S 08 Apr 2020 05:34:19.509 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 53cbf4b5efdef7e11e54519a22ce0237989e80b5
+1:S 08 Apr 2020 05:34:19.738 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 08 Apr 2020 05:34:19.738 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 08 Apr 2020 05:34:19.738 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 89136814ea739a99417054dbf41ea0ded4817909
+1:S 08 Apr 2020 05:34:20.825 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 08 Apr 2020 05:34:21.232 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 08 Apr 2020 05:34:22.207 * Marking node eb97b4baffba703c1a0b106c8c26c8aeb122c114 as failing (quorum reached).
+1:S 08 Apr 2020 05:34:25.629 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 08 Apr 2020 05:34:25.794 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 08 Apr 2020 05:34:26.722 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 08 Apr 2020 05:34:30.314 * Clear FAIL state for node 89136814ea739a99417054dbf41ea0ded4817909: is reachable again and nobody is serving its slots after some time.
+1:S 08 Apr 2020 05:34:30.416 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 08 Apr 2020 05:34:30.416 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 08 Apr 2020 05:34:32.437 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 08 Apr 2020 05:34:33.413 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 08 Apr 2020 05:34:33.880 * Clear FAIL state for node eb97b4baffba703c1a0b106c8c26c8aeb122c114: is reachable again and nobody is serving its slots after some time.
+1:S 08 Apr 2020 05:34:33.881 # Cluster state changed: ok
+1:S 08 Apr 2020 05:34:33.902 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b
+1:S 08 Apr 2020 05:34:34.998 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 21 Apr 2020 01:56:39.654 # Bad message length or signature received from Cluster bus.
+1:S 30 Apr 2020 13:54:53.496 # Bad message length or signature received from Cluster bus.
+1:S 01 May 2020 04:56:53.638 # Bad message length or signature received from Cluster bus.
+1:S 12 May 2020 02:33:04.958 # Cluster state changed: fail
+1:S 12 May 2020 02:33:18.049 * Marking node 53cbf4b5efdef7e11e54519a22ce0237989e80b5 as failing (quorum reached).
+1:S 12 May 2020 02:33:18.049 * Marking node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f as failing (quorum reached).
+1:S 12 May 2020 02:33:18.049 * Marking node 07358e9560cb6059495fbaf2bf6b831695920b6e as failing (quorum reached).
+1:S 12 May 2020 02:33:19.054 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 12 May 2020 02:33:20.051 * Marking node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b as failing (quorum reached).
+1:S 12 May 2020 02:33:20.793 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 12 May 2020 02:33:20.965 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:S 12 May 2020 02:33:21.601 * FAIL message received from eb97b4baffba703c1a0b106c8c26c8aeb122c114 about 89136814ea739a99417054dbf41ea0ded4817909
+1:S 12 May 2020 02:33:23.581 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:S 12 May 2020 02:33:24.085 * FAIL message received from 53cbf4b5efdef7e11e54519a22ce0237989e80b5 about 07358e9560cb6059495fbaf2bf6b831695920b6e
+1:S 12 May 2020 02:33:24.570 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about c2373db38bcbc51190f9b1c3e65aebd52f6300bd
+1:S 12 May 2020 02:33:24.662 # Start of election delayed for 589 milliseconds (rank #0, offset 6627180).
+1:S 12 May 2020 02:33:25.270 # Starting a failover election for epoch 28.
+1:S 12 May 2020 02:33:25.941 * Clear FAIL state for node 07358e9560cb6059495fbaf2bf6b831695920b6e: replica is reachable again.
+1:S 12 May 2020 02:33:27.357 * Clear FAIL state for node 113b650fb7f5da2f31847a1efcd3c0148b1d9b4b: replica is reachable again.
+1:S 12 May 2020 02:33:29.198 * Clear FAIL state for node 53cbf4b5efdef7e11e54519a22ce0237989e80b5: is reachable again and nobody is serving its slots after some time.
+1:S 12 May 2020 02:33:32.385 * Clear FAIL state for node 89136814ea739a99417054dbf41ea0ded4817909: is reachable again and nobody is serving its slots after some time.
+1:S 12 May 2020 02:33:34.493 # Failover election won: I'm the new master.
+1:S 12 May 2020 02:33:34.493 # configEpoch set to 28 after successful failover
+1:M 12 May 2020 02:33:34.493 # Setting secondary replication ID to 38e8c796b3c1f838d766c5f075d2b36adf268ac5, valid up to offset: 6627195. New replication ID is bd6eab319118534aded9e9fd556e604087628e1b
+1:M 12 May 2020 02:33:34.493 # Connection with master lost.
+1:M 12 May 2020 02:33:34.494 * Caching the disconnected master state.
+1:M 12 May 2020 02:33:34.494 * Discarding previously cached master state.
+1:M 12 May 2020 02:33:35.311 * Replica 211.159.216.48:6379 asks for synchronization
+1:M 12 May 2020 02:33:35.311 * Partial resynchronization request from 211.159.216.48:6379 accepted. Sending 0 bytes of backlog starting from offset 6627195.
+1:M 12 May 2020 02:33:37.402 # Cluster state changed: ok
+1:M 12 May 2020 02:33:38.206 * Clear FAIL state for node c2373db38bcbc51190f9b1c3e65aebd52f6300bd: replica is reachable again.
+1:M 12 May 2020 02:33:40.544 # Failover auth denied to 07358e9560cb6059495fbaf2bf6b831695920b6e: its master is up
+1:M 12 May 2020 02:33:41.241 * FAIL message received from 89136814ea739a99417054dbf41ea0ded4817909 about 5e79d143e1773f99d92c5acb70ccda5a38dfd19f
+1:M 12 May 2020 02:33:42.619 * Clear FAIL state for node 5e79d143e1773f99d92c5acb70ccda5a38dfd19f: replica is reachable again.
+1:M 12 May 2020 02:37:16.600 # Cluster state changed: fail
+1:M 12 May 2020 02:38:10.322 # Disconnecting timedout replica: 211.159.216.48:6379
+1:M 12 May 2020 02:38:10.329 # Connection with replica 211.159.216.48:6379 lost.
+1:signal-handler (1589251211) Received SIGTERM scheduling shutdown...
+1:M 12 May 2020 02:40:11.291 # User requested shutdown...
+1:M 12 May 2020 02:40:11.291 * Calling fsync() on the AOF file.
+1:M 12 May 2020 02:40:11.316 * Removing the pid file.
+1:M 12 May 2020 02:40:11.322 # Redis is now ready to exit, bye bye...
